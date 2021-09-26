@@ -8,7 +8,6 @@ function* logout() {
 }
 
 function* login({ payload }: ReturnType<any>) {
-    console.log(1)
     yield call(loginUser, payload)
     yield put({type: LOGIN, payload: payload})
 }

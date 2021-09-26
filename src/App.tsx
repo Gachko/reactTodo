@@ -1,27 +1,24 @@
-import React from 'react';
-import './App.css';
-import {LoginPage} from "./pages/Login/Login.page";
-import {TodoPage} from "./pages/Todo/Todo.page";
-import {Header} from "./common/components/Header/Header.component";
-import {useSelector} from "react-redux";
-import {RootState} from "./store/reducer";
+import React from 'react'
+import './App.css'
 import {
     Switch,
     Route,
-    Redirect,
     useHistory
 } from 'react-router-dom'
+import { LoginPage } from './pages/Login/Login.page'
+import { TodoPage } from './pages/Todo/Todo.page'
+import { useSelector } from 'react-redux'
+import { RootState } from './store/reducer'
 
 function App() {
 
-    const history = useHistory()
+  const history = useHistory()
 
   const user = useSelector((state: RootState) => state.LoginReducer.user)
 
-    if(!user) {
-        history.push('/login')
-    }
-
+  if(!user) {
+     history.push('/login')
+  }
 
   return (
     <>
