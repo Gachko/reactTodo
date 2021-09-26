@@ -1,6 +1,10 @@
-import {TodoInterface} from "../../../common/types/Todo.interface";
-import {ADD_TODO, CHECKED_TODO, DELETE_TODO} from "./todo.actions";
-
+import { TodoInterface } from '../../../common/types/Todo.interface'
+import {
+    ADD_TODO,
+    CHECKED_TODO,
+    DELETE_TODO,
+    EDIT_TODO
+} from './todo.actions'
 
 export interface ITodoReducer {
     loading: boolean,
@@ -28,6 +32,11 @@ export const TodoReducer = ( state = initialState, action: any) => {
             return {
                 ...state,
                 todos: state.todos.map((todo: TodoInterface) => (todo.id === action.payload) ? {...todo, isComplete: !todo.isComplete} : todo)
+            }
+        case EDIT_TODO:
+            return {
+                ...state,
+                todos: state.todos.map((todo: TodoInterface) => (todo.id === action.payload.id) ? {...todo, text: action.payload.newTitle} : todo)
             }
         default:
             return state

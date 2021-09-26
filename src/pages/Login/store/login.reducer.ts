@@ -1,4 +1,4 @@
-import {LOGIN, LOGOUT} from "./login.actions";
+import { LOGIN, LOGOUT } from './login.actions'
 
 export interface LoginReducer {
     user: string | null

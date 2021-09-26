@@ -8,19 +8,25 @@
       color: rgba(135, 135, 135, 0.94);
       text-decoration: line-through;
     }
-  .todo-item-action {
-    border: 1px solid $mainColor;
-    border-radius: 4px;
+  .todo-item-actions {
     display: flex;
-    align-items: center;
-    padding: 5px;
-    cursor: pointer;
-    transition: background-color .3s ease-in;
-    &:hover {
-      background-color: $mainColor;
-    }
-    &:hover .todo-item-action-action {
-      color: #fff;
+    .todo-item-action {
+      border: 1px solid $mainColor;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding: 5px;
+      cursor: pointer;
+      transition: background-color .3s ease-in;
+      &:first-child {
+        margin-right: 20px;
+      }
+      &:hover {
+        background-color: $mainColor;
+      }
+      &:hover .todo-item-action-action {
+        color: #fff;
+      }
     }
   }
 }
